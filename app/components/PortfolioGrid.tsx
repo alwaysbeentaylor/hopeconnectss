@@ -38,10 +38,12 @@ export default function PortfolioGrid() {
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-on-scroll">
           {projects.map((project) => (
             <div key={project.id} className="group relative aspect-[3/4] overflow-hidden cursor-pointer">
-              <img 
+              <Image 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-charcoal/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6 text-center">
                 <span className="text-gold text-sm uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
